@@ -29,13 +29,13 @@ private:
 // the private member _currentPhase which can take „red“ or „green“ as its
 // value.
 
+// global enum
+enum TrafficLightPhase { red, green };
+
 class TrafficLight : public TrafficObject {
 public:
-
-  // class wide enums
-  enum TrafficLightPhase {red, green};
-
   // constructor / desctructor
+  TrafficLight();
 
   // getters / setters
   TrafficLightPhase getCurrentPhase();
@@ -43,13 +43,12 @@ public:
   // typical behaviour methods
   void waitForGreen();
   void simulate();
-  
 
 private:
   // typical behaviour methods
   void cycleThroughPhases();
   TrafficLightPhase _currentPhase;
-  
+
   // FP.4b : create a private member of type MessageQueue for messages of type
   // TrafficLightPhase and use it within the infinite loop to push each new
   // TrafficLightPhase into it by calling send in conjunction with move
