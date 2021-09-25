@@ -1,6 +1,7 @@
 #ifndef INTERSECTION_H
 #define INTERSECTION_H
 
+#include "TrafficLight.h"
 #include "TrafficObject.h"
 #include <future>
 #include <memory>
@@ -10,6 +11,7 @@
 // forward declarations to avoid include cycle
 class Street;
 class Vehicle;
+// class TrafficLight;
 
 // auxiliary class to queue and dequeue waiting vehicles in a thread-safe manner
 class WaitingVehicles {
@@ -58,6 +60,7 @@ private:
                         // waiting to enter the intersection
   bool _isBlocked; // flag indicating wether the intersection is blocked by a
                    // vehicle
+  TrafficLight _trafficLight;
 };
 
 #endif
